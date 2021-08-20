@@ -8,11 +8,11 @@ buttonClickHandler = () => {
 	fetch(url)
 		.then((response) => response.json())
 		.then((json) => {
-			const translated = json.contents.translated;
-			output.innerText = translated;
+			output.innerText = json.contents.translated;
 		})
 		.catch((e) => {
 			console.log('Error', e);
+			alert('Error getting data from the api. Please try again later');
 		});
 };
 button.addEventListener('click', buttonClickHandler);
